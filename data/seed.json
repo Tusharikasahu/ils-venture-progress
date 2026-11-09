@@ -1,0 +1,621 @@
+{
+  "config": {
+    "levels": [
+      "Level 0",
+      "Level 1",
+      "Level 2",
+      "MSL"
+    ],
+    "criteria": [
+      {
+        "id": "CON-D1",
+        "model": "Consumer",
+        "transition": "L0→L1 demand bar",
+        "label": "Priced yeses",
+        "target": 10,
+        "unit": "count"
+      },
+      {
+        "id": "CON-D2",
+        "model": "Consumer",
+        "transition": "L0→L1 demand bar",
+        "label": "Paying customers",
+        "target": 3,
+        "unit": "count"
+      },
+      {
+        "id": "CON-D3",
+        "model": "Consumer",
+        "transition": "L0→L1 demand bar",
+        "label": "Cash collected",
+        "target": 10000,
+        "unit": "INR"
+      },
+      {
+        "id": "SRV-D1",
+        "model": "Services",
+        "transition": "L0→L1 demand bar",
+        "label": "Priced yeses",
+        "target": 5,
+        "unit": "count"
+      },
+      {
+        "id": "SRV-D2",
+        "model": "Services",
+        "transition": "L0→L1 demand bar",
+        "label": "Paying clients",
+        "target": 2,
+        "unit": "count"
+      },
+      {
+        "id": "SRV-D3",
+        "model": "Services",
+        "transition": "L0→L1 demand bar",
+        "label": "Cash collected",
+        "target": 15000,
+        "unit": "INR"
+      },
+      {
+        "id": "B2C-D1",
+        "model": "AI B2C",
+        "transition": "L0→L1 demand bar",
+        "label": "Target-segment sign-ups",
+        "target": 30,
+        "unit": "count"
+      },
+      {
+        "id": "B2C-D2",
+        "model": "AI B2C",
+        "transition": "L0→L1 demand bar",
+        "label": "Consecutive weeks with ≥10 weekly users",
+        "target": 2,
+        "unit": "weeks"
+      },
+      {
+        "id": "B2B-D1",
+        "model": "AI B2B",
+        "transition": "L0→L1 demand bar",
+        "label": "Budget-holder pricing conversations",
+        "target": 5,
+        "unit": "count"
+      },
+      {
+        "id": "B2B-D2",
+        "model": "AI B2B",
+        "transition": "L0→L1 demand bar",
+        "label": "Signed LOIs",
+        "target": 1,
+        "unit": "count"
+      },
+      {
+        "id": "B2B-D3",
+        "model": "AI B2B",
+        "transition": "L0→L1 demand bar",
+        "label": "Pilots scoped in writing",
+        "target": 1,
+        "unit": "count"
+      },
+      {
+        "id": "L0-C1",
+        "model": "*",
+        "transition": "L0→L1 checklist",
+        "label": "Evidence-backed canvas + mentor sign-off",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "L0-C2",
+        "model": "*",
+        "transition": "L0→L1 checklist",
+        "label": "Reachable target customer",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "L0-C3",
+        "model": "*",
+        "transition": "L0→L1 checklist",
+        "label": "55 unique discovery conversations over ≥3 weeks (≥40 target segment, ≥10 workaround users)",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "L0-C4",
+        "model": "*",
+        "transition": "L0→L1 checklist",
+        "label": "Dated problem-validation findings",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "L0-C5",
+        "model": "*",
+        "transition": "L0→L1 checklist",
+        "label": "Predeclared riskiest-assumption test + result + decision",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "CON-T1",
+        "model": "Consumer",
+        "transition": "L1→L2 traction",
+        "label": "Customers",
+        "target": 20,
+        "unit": "count"
+      },
+      {
+        "id": "CON-T2",
+        "model": "Consumer",
+        "transition": "L1→L2 traction",
+        "label": "Cumulative revenue",
+        "target": 125000,
+        "unit": "INR"
+      },
+      {
+        "id": "SRV-T1",
+        "model": "Services",
+        "transition": "L1→L2 traction",
+        "label": "Clients",
+        "target": 8,
+        "unit": "count"
+      },
+      {
+        "id": "SRV-T2",
+        "model": "Services",
+        "transition": "L1→L2 traction",
+        "label": "Cumulative revenue",
+        "target": 125000,
+        "unit": "INR"
+      },
+      {
+        "id": "B2C-T1",
+        "model": "AI B2C",
+        "transition": "L1→L2 traction",
+        "label": "WAU sustained over 4 weeks",
+        "target": 35,
+        "unit": "count"
+      },
+      {
+        "id": "B2C-T2",
+        "model": "AI B2C",
+        "transition": "L1→L2 traction",
+        "label": "Users still active after 3 weeks",
+        "target": 5,
+        "unit": "count"
+      },
+      {
+        "id": "B2B-T1",
+        "model": "AI B2B",
+        "transition": "L1→L2 traction",
+        "label": "Signed LOIs",
+        "target": 3,
+        "unit": "count"
+      },
+      {
+        "id": "B2B-T2",
+        "model": "AI B2B",
+        "transition": "L1→L2 traction",
+        "label": "Completed pilots",
+        "target": 1,
+        "unit": "count"
+      },
+      {
+        "id": "MSL-C1",
+        "model": "*",
+        "transition": "L2→MSL readiness",
+        "label": "Startup identity / branding",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "MSL-C2",
+        "model": "*",
+        "transition": "L2→MSL readiness",
+        "label": "Website",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "MSL-C3",
+        "model": "*",
+        "transition": "L2→MSL readiness",
+        "label": "Dedicated bank account",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "MSL-C4",
+        "model": "*",
+        "transition": "L2→MSL readiness",
+        "label": "Expense tracking",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "MSL-C5",
+        "model": "*",
+        "transition": "L2→MSL readiness",
+        "label": "Business model with monetisation path",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "MSL-S1",
+        "model": "Services",
+        "transition": "L2→MSL readiness",
+        "label": "Customers (guide says 10–20)",
+        "target": null,
+        "unit": "count",
+        "needsConfig": "Range 10–20: confirm the minimum"
+      },
+      {
+        "id": "MSL-S2",
+        "model": "Services",
+        "transition": "L2→MSL readiness",
+        "label": "Revenue (guide says ₹2 lakh+)",
+        "target": null,
+        "unit": "INR",
+        "needsConfig": "Period not defined (cumulative? trailing 12 months?)"
+      },
+      {
+        "id": "MSL-S3",
+        "model": "Services",
+        "transition": "L2→MSL readiness",
+        "label": "Repeat / retention (guide says 30–40%)",
+        "target": null,
+        "unit": "%",
+        "needsConfig": "Range 30–40% and measurement window not defined"
+      },
+      {
+        "id": "MSL-S4",
+        "model": "Services",
+        "transition": "L2→MSL readiness",
+        "label": "Organised delivery",
+        "target": true,
+        "unit": "yes/no",
+        "needsConfig": "What evidence counts as 'organised'?"
+      },
+      {
+        "id": "MSL-B1",
+        "model": "AI B2B",
+        "transition": "L2→MSL readiness",
+        "label": "Customers (guide says 1–2)",
+        "target": null,
+        "unit": "count",
+        "needsConfig": "Range 1–2: confirm the minimum"
+      },
+      {
+        "id": "MSL-B2",
+        "model": "AI B2B",
+        "transition": "L2→MSL readiness",
+        "label": "Live MVP",
+        "target": true,
+        "unit": "yes/no"
+      },
+      {
+        "id": "MSL-B3",
+        "model": "AI B2B",
+        "transition": "L2→MSL readiness",
+        "label": "Signed LOIs",
+        "target": 5,
+        "unit": "count"
+      },
+      {
+        "id": "MSL-B4",
+        "model": "AI B2B",
+        "transition": "L2→MSL readiness",
+        "label": "Pilots",
+        "target": 2,
+        "unit": "count",
+        "needsConfig": "Completed or scoped pilots?"
+      },
+      {
+        "id": "MSL-B5",
+        "model": "AI B2B",
+        "transition": "L2→MSL readiness",
+        "label": "Customer willing to pay",
+        "target": true,
+        "unit": "yes/no",
+        "needsConfig": "What evidence proves willingness to pay?"
+      }
+    ],
+    "transitionsFrom": {
+      "Level 0": [
+        "L0→L1 checklist",
+        "L0→L1 demand bar"
+      ],
+      "Level 1": [
+        "L1→L2 traction"
+      ],
+      "Level 2": [
+        "L2→MSL readiness"
+      ],
+      "MSL": []
+    }
+  },
+  "data": {
+    "ventures": [
+      {
+        "id": "A",
+        "name": "Venture A",
+        "activity": "AI typography/design tool for short-form video",
+        "trackerSector": "AI/Product",
+        "devStage": "MVP Developed",
+        "programmeLevel": null,
+        "levelProvenance": "Not supplied in tracker",
+        "model": {
+          "value": null,
+          "candidates": [
+            "AI B2C",
+            "AI B2B"
+          ],
+          "resolved": false,
+          "note": "Unresolved: tracker assigns consumer-style usage criteria, but recent activity targets agencies. Owner must clarify."
+        },
+        "importedStatuses": [],
+        "recordedUpdate": "Pilot running; pursuing agency deals; no early customers; no sale",
+        "importedFinancials": [],
+        "fundraisingPref": null,
+        "mslHandover": null,
+        "mslAcceptance": null,
+        "mentorGoal": "Close agency opportunities and create a feedback loop; get GTM support",
+        "mentorStatus": null,
+        "nextUpdateDate": null,
+        "assignedCriteria": [
+          "B2C-D1",
+          "B2C-D2"
+        ],
+        "assignedNote": "Assigned by tracker (AI B2C usage). Kept as-is until model is clarified."
+      },
+      {
+        "id": "B",
+        "name": "Venture B",
+        "activity": "AI-enabled operational automation for SMBs/factories",
+        "trackerSector": "AI/Product",
+        "devStage": null,
+        "programmeLevel": null,
+        "levelProvenance": "Not supplied in tracker",
+        "model": {
+          "value": null,
+          "candidates": [
+            "Services",
+            "AI B2B"
+          ],
+          "resolved": false,
+          "note": "Requires clarification: services/consultancy vs SaaS product. Keep Services and SaaS evidence separate."
+        },
+        "importedStatuses": [
+          {
+            "label": "Eligible for MSL",
+            "provenance": "Existing programme decision imported from tracker; underlying evidence not supplied",
+            "recomputable": false
+          }
+        ],
+        "recordedUpdate": "Factory engagement; exploring custom solutions/consultancy vs product direction",
+        "importedFinancials": [
+          {
+            "line": "Services",
+            "amount": 1200000,
+            "period": null,
+            "source": "Tracker statement",
+            "note": "₹12 lakh services; period and records not supplied. Relationship to new evidence unknown."
+          },
+          {
+            "line": "SaaS",
+            "amount": 0,
+            "period": null,
+            "source": "Tracker statement",
+            "note": "No SaaS revenue"
+          }
+        ],
+        "fundraisingPref": "Grants; does not want equity funding",
+        "mslHandover": null,
+        "mslAcceptance": null,
+        "mentorGoal": null,
+        "mentorStatus": "Needs updating",
+        "nextUpdateDate": null,
+        "assignedCriteria": [],
+        "assignedNote": "None assigned: model unresolved."
+      },
+      {
+        "id": "C",
+        "name": "Venture C",
+        "activity": "Esports platform, sponsored events and streaming income",
+        "trackerSector": null,
+        "devStage": null,
+        "programmeLevel": "Level 2",
+        "levelProvenance": "Direct entry at Demo Day (see decision history)",
+        "model": {
+          "value": "Services",
+          "candidates": [
+            "Services"
+          ],
+          "resolved": true,
+          "note": "Services, per tracker"
+        },
+        "importedStatuses": [
+          {
+            "label": "Eligible for MSL",
+            "provenance": "Existing programme decision imported from tracker (programme owner's clarification); underlying evidence not supplied",
+            "recomputable": false
+          }
+        ],
+        "recordedUpdate": null,
+        "importedFinancials": [
+          {
+            "line": "All (traction)",
+            "amount": 13000000,
+            "period": null,
+            "source": "Tracker",
+            "note": "₹1.3 crore; 25+ sponsored events. Period and source breakdown not supplied. Whether it includes the mock evidence is unknown."
+          }
+        ],
+        "fundraisingPref": "No, per tracker (does not affect eligibility)",
+        "mslHandover": null,
+        "mslAcceptance": null,
+        "mentorGoal": null,
+        "mentorStatus": "Meeting noted for 12 Oct; outcome/actions not recorded",
+        "nextUpdateDate": null,
+        "assignedCriteria": [],
+        "assignedNote": "Level 2: L2→MSL readiness applies."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "A-E01",
+        "ventureId": "A",
+        "type": "Analytics excerpt",
+        "line": null,
+        "detail": "Reports 32 sign-ups; WAU 12 (w/e 4 Oct) and 8 (w/e 11 Oct). Target-segment membership not recorded.",
+        "amount": null,
+        "period": "Weeks ending 4 & 11 Oct",
+        "status": "submitted",
+        "kind": "usage",
+        "reviews": []
+      },
+      {
+        "id": "B-E01",
+        "ventureId": "B",
+        "type": "Signed LOI",
+        "line": "SaaS",
+        "detail": "One prospective SaaS customer's intent to consider a pilot. No payment commitment.",
+        "amount": null,
+        "period": "Signed 10 Oct",
+        "status": "submitted",
+        "kind": "loi",
+        "reviews": []
+      },
+      {
+        "id": "B-E02",
+        "ventureId": "B",
+        "type": "Services invoice INV-01",
+        "line": "Services",
+        "detail": "₹100,000 billed to Factory X. Marked unpaid.",
+        "amount": 100000,
+        "period": "Issued 8 Oct",
+        "status": "submitted",
+        "kind": "invoice",
+        "reviews": []
+      },
+      {
+        "id": "B-E03",
+        "ventureId": "B",
+        "type": "Payment receipt PAY-01",
+        "line": "Services",
+        "detail": "₹60,000 received against INV-01 (partial).",
+        "amount": 60000,
+        "period": "Received 11 Oct",
+        "status": "submitted",
+        "kind": "receipt",
+        "against": "B-E02",
+        "reviews": []
+      },
+      {
+        "id": "C-E01",
+        "ventureId": "C",
+        "type": "Streaming statement",
+        "line": "Streaming",
+        "detail": "₹80,000 earnings.",
+        "amount": 80000,
+        "period": "September (earned)",
+        "status": "submitted",
+        "kind": "earning",
+        "reviews": []
+      },
+      {
+        "id": "C-E02",
+        "ventureId": "C",
+        "type": "Streaming payout",
+        "line": "Streaming",
+        "detail": "₹70,000 received against C-E01.",
+        "amount": 70000,
+        "period": "Received 5 Oct",
+        "status": "submitted",
+        "kind": "payout",
+        "against": "C-E01",
+        "reviews": []
+      },
+      {
+        "id": "C-E03",
+        "ventureId": "C",
+        "type": "Sponsorship invoice",
+        "line": "Sponsorship",
+        "detail": "₹120,000 billed to Sponsor Y. Payment unknown.",
+        "amount": 120000,
+        "period": "September",
+        "status": "submitted",
+        "kind": "invoice",
+        "reviews": []
+      }
+    ],
+    "updates": [
+      {
+        "id": "A-01",
+        "ventureId": "A",
+        "submittedBy": "Venture A (student)",
+        "submittedAt": "2026-10-12T10:00:00",
+        "lines": [
+          {
+            "criterionId": "B2C-D1",
+            "claimed": 32,
+            "note": "Total sign-ups. Target-segment membership not recorded."
+          },
+          {
+            "criterionId": "B2C-D2",
+            "claimed": 1,
+            "note": "WAU 12 (w/e 4 Oct), 8 (w/e 11 Oct): only 1 week at ≥10."
+          }
+        ],
+        "period": "Weeks ending 4 & 11 Oct",
+        "evidenceRefs": [
+          "A-E01"
+        ],
+        "blocker": null,
+        "nextAction": null,
+        "status": "submitted",
+        "reviews": []
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D-C1",
+        "ventureId": "C",
+        "type": "Direct entry",
+        "from": null,
+        "to": "Level 2",
+        "basis": "Did not participate in ILS. Assessed at Demo Day on prior work.",
+        "decidedBy": "Not supplied",
+        "decisionDate": "Not supplied",
+        "provenance": "Programme owner's clarification (imported)",
+        "recordedAt": "Imported",
+        "recordedBy": "Import"
+      },
+      {
+        "id": "D-C2",
+        "ventureId": "C",
+        "type": "Status decision",
+        "from": null,
+        "to": "Eligible for MSL",
+        "basis": "Subsequent programme decision. Underlying evidence not supplied; not recomputed.",
+        "decidedBy": "Not supplied",
+        "decisionDate": "Not supplied",
+        "provenance": "Tracker label (imported)",
+        "recordedAt": "Imported",
+        "recordedBy": "Import"
+      },
+      {
+        "id": "D-B1",
+        "ventureId": "B",
+        "type": "Status decision",
+        "from": null,
+        "to": "Eligible for MSL",
+        "basis": "Existing programme decision. Underlying evidence not supplied; not recomputed.",
+        "decidedBy": "Not supplied",
+        "decisionDate": "Not supplied",
+        "provenance": "Tracker label (imported)",
+        "recordedAt": "Imported",
+        "recordedBy": "Import"
+      }
+    ]
+  }
+}
